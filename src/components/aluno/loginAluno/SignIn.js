@@ -12,6 +12,8 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import useAuth from '../../../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
   return (
@@ -31,6 +33,13 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignInSide() {
+  const { signin } = useAuth();
+  const navigate = useNavigate()
+
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [error, setError] = React.useState("");
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -38,7 +47,14 @@ export default function SignInSide() {
       email: data.get('email'),
       password: data.get('password'),
     });
+    const res = signin(email, password);
+    if(res){
+      setError(res);
+    }
+    navigate("/home")
   };
+
+  
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -82,6 +98,8 @@ export default function SignInSide() {
                 id="email"
                 label="Email Address"
                 name="email"
+                value={email}
+                onChange={(e) => [setEmail(e.target.value), setError("")]}
                 autoComplete="email"
                 autoFocus
               />
@@ -92,6 +110,8 @@ export default function SignInSide() {
                 name="password"
                 label="Password"
                 type="password"
+                value={password}
+                onChange={(e) => [setPassword(e.target.value), setError("")]}
                 id="password"
                 autoComplete="current-password"
               />
@@ -101,6 +121,7 @@ export default function SignInSide() {
               />
               <Button
                 type="submit"
+                onClick={handleSubmit}
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
@@ -108,14 +129,9 @@ export default function SignInSide() {
                 Sign In
               </Button>
               <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                  <Link to="/aluno/cadastro" variant="body2">
+                    &nbsp;Registre-se
                   </Link>
                 </Grid>
               </Grid>
