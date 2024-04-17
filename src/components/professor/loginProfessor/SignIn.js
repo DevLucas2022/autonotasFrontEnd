@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react'; // Adicionando importação do React
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -26,11 +27,30 @@ function Copyright(props) {
   );
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
+const imagesFolder = './images/randowImg';
+
+// Função para carregar uma imagem aleatória da pasta
+function getRandomImage() {
+  const images = require.context(imagesFolder, false, /\.(png|jpe?g|svg)$/);
+  const keys = images.keys();
+  const randomKey = keys[Math.floor(Math.random() * keys.length)];
+  return images(randomKey);
+}
+
+function MyComponent() {
+  const [backgroundImage, setBackgroundImage] = useState(''); // Corrigindo definição de backgroundImage
+
+  useEffect(() => {
+    const randomImage = getRandomImage();
+    setBackgroundImage(randomImage);
+  }, []);
+
+  return null; // Componente não renderiza nada diretamente
+}
 
 const defaultTheme = createTheme();
 
-export default function SignInSideProfessor() {
+function SignInSideProfessor() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -50,7 +70,7 @@ export default function SignInSideProfessor() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random?wallpapers)',
+            backgroundImage: `url(${backgroundImage})`,
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -127,3 +147,5 @@ export default function SignInSideProfessor() {
     </ThemeProvider>
   );
 }
+
+export { MyComponent, SignInSideProfessor }
