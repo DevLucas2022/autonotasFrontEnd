@@ -96,7 +96,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   sx={{ py: '6px', px: '12px' }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    Features
+                    Sobre nós
                   </Typography>
                 </MenuItem>
                 <MenuItem
@@ -104,29 +104,15 @@ function AppAppBar({ mode, toggleColorMode }) {
                   sx={{ py: '6px', px: '12px' }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    Testimonials
+                    Professores
                   </Typography>
                 </MenuItem>
                 <MenuItem
                   onClick={() => scrollToSection('highlights')}
                   sx={{ py: '6px', px: '12px' }}
                 >
-                  <Typography variant="body2" color="text.primary">
-                    Highlights
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection('pricing')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    Pricing
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection('faq')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
+                  
+                 
                   <Typography variant="body2" color="text.primary">
                     FAQ
                   </Typography>
@@ -149,7 +135,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 href="/material-ui/getting-started/templates/sign-in/"
                 target="_blank"
               >
-                Sign in
+                Entre
               </Button>
               <Button
                 color="primary"
@@ -159,7 +145,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 href="/material-ui/getting-started/templates/sign-up/"
                 target="_blank"
               >
-                Sign up
+                Cadastre-se
               </Button>
             </Box>
             <Box sx={{ display: { sm: '', md: 'none' } }}>
