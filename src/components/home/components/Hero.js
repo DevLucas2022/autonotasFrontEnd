@@ -60,7 +60,7 @@ export default function Hero() {
             color="text.secondary"
             sx={{ alignSelf: 'center', width: { sm: '100%', md: '80%' } }}
           >
-            Um HUB com tudo que o estudante precisa.
+            O AutoNotas é uma ferramenta inovadora dedicada à atribuição de notas e feedbacks, simplificando a comunicação entre professores e alunos. O software permite a criação de salas personalizadas, proporcionando uma organização eficiente. Os alunos, por sua vez, têm acesso instantâneo a suas notas e feedbacks a qualquer momento, promovendo uma compreensão clara do progresso acadêmico. O destaque do AutoNotas está na personalização do feedback, adaptando-se às necessidades individuais de cada aluno, fortalecendo a relação educacional e aprimorando a experiência de aprendizado de maneira significativa.
           </Typography>
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
@@ -74,31 +74,8 @@ export default function Hero() {
           </Stack>
          
         </Stack>
-        <Box
-          id="image"
-          sx={(theme) => ({
-            mt: { xs: 8, sm: 10 },
-            alignSelf: 'center',
-            height: { xs: 200, sm: 700 },
-            width: '100%',
-            backgroundImage:
-              theme.palette.mode === 'light'
-                ? 'url("/static/images/templates/templates-images/hero-light.png")'
-                : 'url("/static/images/templates/templates-images/hero-dark.png")',
-            backgroundSize: 'cover',
-            borderRadius: '10px',
-            outline: '1px solid',
-            outlineColor:
-              theme.palette.mode === 'light'
-                ? alpha('#BFCCD9', 0.5)
-                : alpha('#9CCCFC', 0.1),
-            boxShadow:
-              theme.palette.mode === 'light'
-                ? `0 0 12px 8px ${alpha('#9CCCFC', 0.2)}`
-                : `0 0 24px 12px ${alpha('#033363', 0.2)}`,
-          })}
-        />
-      </Container>
+        
+        </Container>
     </Box>
   );
 }
