@@ -16,9 +16,9 @@ import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
 const items = [
   {
     icon: <ViewQuiltRoundedIcon />,
-    title: 'Dashboard',
+    title: 'Entre na nossa plataforma',
     description:
-      'This item could provide a snapshot of the most important metrics or data points related to the product.',
+      'Para ter acesso a todas as funcionalidades do nosso site faça login.',
     imageLight: 'url("/static/images/templates/templates-images/dash-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
   },
@@ -55,16 +55,14 @@ export default function Features() {
         <Grid item xs={12} md={6}>
           <div>
             <Typography component="h2" variant="h4" color="text.primary">
-              Product features
+              Sobre nós
             </Typography>
             <Typography
               variant="body1"
               color="text.secondary"
               sx={{ mb: { xs: 2, sm: 4 } }}
             >
-              Here you can provide a brief overview of the key features of the
-              product. For example, you could list the number of features, the types
-              of features, add-ons, or the benefits of the features.
+              O AutoNotas é uma ferramenta inovadora dedicada à atribuição de notas e feedbacks, simplificando a comunicação entre professores e alunos. O software permite a criação de salas personalizadas, proporcionando uma organização eficiente. Os alunos, por sua vez, têm acesso instantâneo a suas notas e feedbacks a qualquer momento, promovendo uma compreensão clara do progresso acadêmico. O destaque do AutoNotas está na personalização do feedback, adaptando-se às necessidades individuais de cada aluno, fortalecendo a relação educacional e aprimorando a experiência de aprendizado de maneira significativa.
             </Typography>
           </div>
           <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>
@@ -225,7 +223,7 @@ export default function Features() {
                         event.stopPropagation();
                       }}
                     >
-                      <span>Learn more</span>
+                      <span>Entre</span>
                       <ChevronRightRoundedIcon
                         fontSize="small"
                         sx={{ mt: '1px', ml: '2px' }}
