@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'; // Adicionando importação do React
-
+import React, { useState } from 'react'; // Adicionando importação do React
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -27,30 +26,19 @@ function Copyright(props) {
   );
 }
 
-const imagesFolder = './images/randowImg';
-
-// Função para carregar uma imagem aleatória da pasta
-function getRandomImage() {
-  const images = require.context(imagesFolder, false, /\.(png|jpe?g|svg)$/);
-  const keys = images.keys();
-  const randomKey = keys[Math.floor(Math.random() * keys.length)];
-  return images(randomKey);
-}
-
-function MyComponent() {
-  const [backgroundImage, setBackgroundImage] = useState(''); // Corrigindo definição de backgroundImage
-
-  useEffect(() => {
-    const randomImage = getRandomImage();
-    setBackgroundImage(randomImage);
-  }, []);
-
-  return null; // Componente não renderiza nada diretamente
-}
+const images = [
+  '/images/randowImg/Mathematics-bro.png',
+  '/images/randowImg/Teacher-student-rafiki.png',
+  '/images/randowImg/Teaching-amico.png',
+  '/images/randowImg/Teaching-pana.png',
+  '/images/randowImg/Webinar-pana.png'
+];
 
 const defaultTheme = createTheme();
 
-function SignInSideProfessor() {
+export default function SignInSideProfessor() {
+  const [backgroundImage] = useState(images[Math.floor(Math.random() * images.length)]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -147,5 +135,4 @@ function SignInSideProfessor() {
     </ThemeProvider>
   );
 }
-
-export { MyComponent, SignInSideProfessor }
+export {SignInSideProfessor};
