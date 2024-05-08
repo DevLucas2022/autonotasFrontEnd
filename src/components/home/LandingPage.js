@@ -88,10 +88,9 @@ export default function LandingPage() {
         <Divider />
         <Highlights />
         <Divider />
-        <Pricing />
         <Divider />
         <FAQ />
-        <Divider />
+ 
         <Footer />
       </Box>
       <ToggleCustomTheme
