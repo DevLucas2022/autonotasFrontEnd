@@ -6,37 +6,78 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState();
 
     useEffect(() => {
-        const userToken = localStorage.getItem("user_token");
-        const usersStorage = localStorage.getItem("user_db");
+        const userId = localStorage.getItem("user_id");
 
-        if(userToken && usersStorage) {
-            const hasUser = JSON.parse(usersStorage)?.filter(
-                (user) => user.email === JSON.parse(userToken).email
-            );
-
-            if(hasUser) setUser(hasUser[0]);
+        if(userId) {
+            const fetchUserData = async () => {
+                try {
+                    const response = await fetch(`http://localhost:8080/aluno/${userId}`, {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    });
+    
+                    if (response.ok) {
+                        const userData = await response.json();
+                    } else {
+                        console.log(`Erro na aplicação: ${response.status}`);
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+            };
+    
+            fetchUserData();
         }
-
     }, []);
 
-    const signin = (email, password) => {
-        const usersStorage = JSON.parse(localStorage.getItem("users_db"))
-
-        hasUser = usersStorage?.filter((user) => user.email === email);
-
-        if(hasUser?.length) {
-            if(hasUser[0].email === email && hasUser[0].password === password) {
-                const token = Math.random().toString(36).substring(2);
-                localStorage.setItem("user_token", JSON.stringify({email, token}))
-                setUser({ email, password});
-                return;
-            } else {
-                return "E-mail ou senha incorretos";
-            }
-        }else{ return " Usuário não cadastrado"}
-    };
+    const signin = async (email, password) => {
+        try {
+          const response = await fetch("http://localhost:8080/alunos", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+          });
+      
+          if (response.ok) {
+            const data = await response.json();
+      
+            // Armazene o token de autenticação retornado pelo backend no localStorage
+            localStorage.setItem("user_id", data.user.id);
+      
+            // Armazene informações do usuário, se necessário
+            setUser(data.user);
+      
+            return; // Login bem-sucedido
+          } else {
+            console.log(`Erro na aplicação: ${response.status}`);
+            throw new Error('Erro ao fazer login');
+          }
+        } catch (error) {
+          console.log(error);
+          return "Erro ao fazer login";
+        }
+      };
+      
     
-    const signup = (email, password) => {   
+    const signup = async (email, password, ra, cep, curso, senha) => {   
+        try {
+            const resposta = await fetch("http://localhost:8080/alunos", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({email, password, ra, cep, curso, senha})
+            });
+
+            return resposta;
+        } catch (error) {
+            return console.log(error)
+        }
+
         const usersStorage = JSON.parse(localStorage.getItem("users_db"))
 
         hasUser = usersStorage?.filter((user) => user.email === email);
@@ -60,7 +101,8 @@ export const AuthProvider = ({ children }) => {
 
     const signout = () => {
         setUser(null);
-        localStorage.removeItem("user_token");
+        localStorage.removeItem("user_id");
+        history.push("/login");
     };
     return( 
         <AuthContext.Provider
