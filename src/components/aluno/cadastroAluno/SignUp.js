@@ -18,16 +18,14 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="/dashbaord">
+        Auto Notas
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
   );
 }
-
-// TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
@@ -64,22 +62,32 @@ export default function SignUpAluno() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
-                  name="firstName"
+                  name="nome"
                   required
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="nome"
+                  label="Nome"
                   autoFocus
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="ra"
+                  label="Ra"
+                  type="number"
+                  id="ra"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
                   required
                   fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
+                  id="curso"
+                  label="Curso"
+                  name="curso"
+                  autoComplete="nome-do-curso"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -87,7 +95,7 @@ export default function SignUpAluno() {
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label="Email"
                   name="email"
                   autoComplete="email"
                 />
@@ -97,10 +105,20 @@ export default function SignUpAluno() {
                   required
                   fullWidth
                   name="password"
-                  label="Password"
+                  label="Senha"
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="cep"
+                  label="Cep"
+                  type="cep"
+                  id="cep"
                 />
               </Grid>
               <Grid item xs={12}>

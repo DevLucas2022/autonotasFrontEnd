@@ -1,15 +1,13 @@
-import React, { useState } from 'react'; // Adicionando importação do React
+import React, { useState } from 'react'; 
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import PersonPinIcon from '@mui/icons-material/PersonPin';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -17,8 +15,8 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Autonotas
+      <Link color="inherit" href="/dashboard">
+        Auto Notas
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -28,10 +26,15 @@ function Copyright(props) {
 
 const images = [
   '/images/randowImg/Mathematics-bro.png',
+  '/images/randowImg/Mathematics-rafiki.png',
+  '/images/randowImg/Professor-amico.png',
+  '/images/randowImg/Professor-bro.png',
+  '/images/randowImg/Professor-pana.png',
   '/images/randowImg/Teacher-student-rafiki.png',
-  '/images/randowImg/Teaching-amico.png',
   '/images/randowImg/Teaching-pana.png',
-  '/images/randowImg/Webinar-pana.png'
+  '/images/randowImg/Webinar-pana.png',
+  '/images/randowImg/Teaching-pana.png',
+  '/images/randowImg/Teacher-bro.png'
 ];
 
 const defaultTheme = createTheme();
@@ -76,11 +79,11 @@ export default function SignInSideProfessor() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
+            <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
+              <PersonPinIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Professor
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -88,7 +91,7 @@ export default function SignInSideProfessor() {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Email"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -98,14 +101,10 @@ export default function SignInSideProfessor() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Senha"
                 type="password"
                 id="password"
                 autoComplete="current-password"
-              />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
               />
               <Button
                 type="submit"
@@ -113,17 +112,17 @@ export default function SignInSideProfessor() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Entrar
               </Button>
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
-                    Forgot password?
+                    Esqueceu a senha?
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                  <Link href="/dashboard/professor/cadastro" variant="body2">
+                    {"Não possuí uma conta? Cadastre-se"}
                   </Link>
                 </Grid>
               </Grid>
