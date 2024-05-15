@@ -105,7 +105,7 @@ export default function Footer() {
             AutoNotas
           </Link>
           <Link color="text.secondary" href="#">
-            Highlights
+            Sobre nós
           </Link>
           <Link color="text.secondary" href="#">
             Pricing
