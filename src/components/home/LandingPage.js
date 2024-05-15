@@ -84,7 +84,6 @@ export default function LandingPage() {
         <Features />
         <Divider />
         <Divider />
-        <Highlights />
         <Divider />
         <Divider /> 
         <Footer />
