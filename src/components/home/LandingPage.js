@@ -84,13 +84,10 @@ export default function LandingPage() {
         <LogoCollection />
         <Features />
         <Divider />
-        <Testimonials />
         <Divider />
         <Highlights />
         <Divider />
-        <Divider />
-        <FAQ />
- 
+        <Divider /> 
         <Footer />
       </Box>
       <ToggleCustomTheme

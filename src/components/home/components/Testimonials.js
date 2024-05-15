@@ -101,7 +101,7 @@ export default function Testimonials() {
         }}
       >
         <Typography component="h2" variant="h4" color="text.primary">
-          Testimonials
+          Professores
         </Typography>
         <Typography variant="body1" color="text.secondary">
           See what our customers love about our products. Discover how we excel in

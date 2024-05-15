@@ -102,10 +102,7 @@ export default function Footer() {
             Product
           </Typography>
           <Link color="text.secondary" href="#">
-            Features
-          </Link>
-          <Link color="text.secondary" href="#">
-            Testimonials
+            AutoNotas
           </Link>
           <Link color="text.secondary" href="#">
             Highlights
