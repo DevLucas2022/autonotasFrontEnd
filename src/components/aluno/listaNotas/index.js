@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
-const { Box, Card } = require("@mui/material");
+const { Box, Typography, Grid } = require("@mui/material");
 const { DataGrid } = require("@mui/x-data-grid");
 
 const columns = [
@@ -49,12 +50,13 @@ const columns = [
 ];
 
 function ListaNotas() {
+    const {id} = useParams() 
     const [rows, setRows] = useState([{}])
 
     useEffect(() => {
       const consulta = async () => {
         try {
-          const resposta = await fetch(`http://localhost:8080/alunosDisciplinas/aluno/disciplina/1`);
+          const resposta = await fetch(`http://localhost:8080/alunosDisciplinas/aluno/disciplina/${id}`);
   
           const dados = await resposta.json();
           console.log(JSON.stringify(dados));
@@ -69,9 +71,13 @@ function ListaNotas() {
     }, []);
 
     return (
-        <Box>
-           <Card sx={{height: 600}}>
-            <DataGrid
+        <Box sx={{display: 'flex', textAlign: 'center', justifyContent: 'center', alignItems: 'center'}}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <Typography variant="h4" color='black'>Notas</Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <DataGrid
                 columns={columns}
                 getRowId={() => uuidv4()}
                 rows={rows}
@@ -83,11 +89,10 @@ function ListaNotas() {
                     },
                   }}
                 pageSizeOptions={[5]}
-                checkboxSelection
                 disableRowSelectionOnClick
-                sx={{width: '70%'}}
-            /> 
-           </Card> 
+              />
+            </Grid>
+          </Grid> 
         </Box>
     )
 }

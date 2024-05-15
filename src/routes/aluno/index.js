@@ -17,7 +17,7 @@ const alunoRoutes = [{
         element: <SignUpAluno />
     },
     {
-        path: 'notas',
+        path: 'notas/:id',
         element: <ListaNotas />
     }
   ],
