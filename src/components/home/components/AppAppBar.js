@@ -85,10 +85,10 @@ function AppAppBar({ mode, toggleColorMode }) {
             >
               <img
                 src={
-                  '/images/randowImg/logoAutonotasBigger-removebg-preview.png'
+                  '/images/logoauto.png'
                 }
                 style={logoStyle}
-                alt="logo of sitemark"
+                alt="logo Auto Notas"
               />
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <MenuItem

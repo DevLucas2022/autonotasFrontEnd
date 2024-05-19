@@ -5,6 +5,12 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import SchoolIcon from '@mui/icons-material/School';
+import Groups3Icon from '@mui/icons-material/Groups3';
+import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
+import SpeakerNotesIcon from '@mui/icons-material/SpeakerNotes';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import FactCheckIcon from '@mui/icons-material/FactCheck';
 import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
 import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
 import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
@@ -14,38 +20,38 @@ import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded';
 
 const items = [
   {
-    icon: <SettingsSuggestRoundedIcon />,
-    title: 'Adaptable performance',
+    icon: < Groups3Icon />,
+    title: 'Professores',
     description:
       'Our product effortlessly adjusts to your needs, boosting efficiency and simplifying your tasks.',
   },
   {
-    icon: <ConstructionRoundedIcon />,
-    title: 'Built to last',
+    icon: < SchoolIcon/>,
+    title: 'Alunos',
     description:
       'Experience unmatched durability that goes above and beyond with lasting investment.',
   },
   {
-    icon: <ThumbUpAltRoundedIcon />,
-    title: 'Great user experience',
+    icon: <MeetingRoomIcon />,
+    title: 'Salas',
     description:
       'Integrate our product into your routine with an intuitive and easy-to-use interface.',
   },
   {
-    icon: <AutoFixHighRoundedIcon />,
-    title: 'Innovative functionality',
+    icon: <FactCheckIcon />,
+    title: 'Notas',
     description:
       'Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
   },
   {
-    icon: <SupportAgentRoundedIcon />,
-    title: 'Reliable support',
+    icon: <SpeakerNotesIcon />,
+    title: 'Feedbacks',
     description:
       'Count on our responsive customer support, offering assistance that goes beyond the purchase.',
   },
   {
-    icon: <QueryStatsRoundedIcon />,
-    title: 'Precision in every detail',
+    icon: <AutoGraphIcon />,
+    title: 'Gráficos',
     description:
       'Enjoy a meticulously crafted product where small touches make a significant impact on your overall experience.',
   },

@@ -40,6 +40,7 @@ export default function Hero() {
               alignSelf: 'center',
               textAlign: 'center',
               fontSize: 'clamp(3.5rem, 10vw, 4rem)',
+              mt: 4, // Espaçamento superior para mover o texto para baixo
             }}
           >
             Auto&nbsp;
@@ -60,7 +61,7 @@ export default function Hero() {
             color="text.secondary"
             sx={{ alignSelf: 'center', width: { sm: '100%', md: '80%' } }}
           >
-            O AutoNotas é uma ferramenta inovadora dedicada à atribuição de notas e feedbacks, simplificando a comunicação entre professores e alunos. O software permite a criação de salas personalizadas, proporcionando uma organização eficiente. Os alunos, por sua vez, têm acesso instantâneo a suas notas e feedbacks a qualquer momento, promovendo uma compreensão clara do progresso acadêmico. O destaque do AutoNotas está na personalização do feedback, adaptando-se às necessidades individuais de cada aluno, fortalecendo a relação educacional e aprimorando a experiência de aprendizado de maneira significativa.
+            O Auto Notas é uma ferramenta inovadora dedicada à atribuição de notas e feedbacks, simplificando a comunicação entre professores e alunos. O software permite a criação de salas personalizadas, proporcionando uma organização eficiente. Os alunos, por sua vez, têm acesso instantâneo a suas notas e feedbacks a qualquer momento, promovendo uma compreensão clara do progresso acadêmico. O destaque do Auto Notas está na personalização do feedback, adaptando-se às necessidades individuais de cada aluno, fortalecendo a relação educacional e aprimorando a experiência de aprendizado de maneira significativa.
           </Typography>
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
@@ -69,13 +70,10 @@ export default function Hero() {
             useFlexGap
             sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
           >
-           
-            
+            {/* Adicione mais elementos aqui se necessário */}
           </Stack>
-         
         </Stack>
-        
-        </Container>
+      </Container>
     </Box>
   );
 }
