@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
+import AppBarInterno from "../../home/components/AppBarInterno";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 const { Box, Typography, Grid } = require("@mui/material");
 const { DataGrid } = require("@mui/x-data-grid");
+
+const defaultTheme = createTheme();
 
 const columns = [
     {
@@ -71,6 +75,19 @@ function ListaNotas() {
     }, []);
 
     return (
+      <>
+        <ThemeProvider theme={defaultTheme}>
+        <AppBarInterno />
+            <Box
+                sx={{
+                    my: 8,
+                    mx: 4,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    padding: 5
+                }}
+        >  
         <Box sx={{display: 'flex', textAlign: 'center', justifyContent: 'center', alignItems: 'center'}}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -94,6 +111,9 @@ function ListaNotas() {
             </Grid>
           </Grid> 
         </Box>
+        </Box>
+        </ThemeProvider>
+      </>
     )
 }
 
