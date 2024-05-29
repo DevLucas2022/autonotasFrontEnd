@@ -23,37 +23,37 @@ const items = [
     icon: < Groups3Icon />,
     title: 'Professores',
     description:
-      'Our product effortlessly adjusts to your needs, boosting efficiency and simplifying your tasks.',
+      'Temos professores com um grande nível de excelência. Profissionais extremamente qualificados que podem transformar sua experiência de aprendizado e impulsionar seu sucesso.',
   },
   {
     icon: < SchoolIcon/>,
     title: 'Alunos',
     description:
-      'Experience unmatched durability that goes above and beyond with lasting investment.',
+      'Alunos com um alto nível de excelência. Estudantes dedicados e talentosos que se destacam em suas áreas, prontos para transformar o futuro e alcançar grandes sucessos.',
   },
   {
     icon: <MeetingRoomIcon />,
     title: 'Salas',
     description:
-      'Integrate our product into your routine with an intuitive and easy-to-use interface.',
+      'Junte sua turma e evolua junto',
   },
   {
     icon: <FactCheckIcon />,
     title: 'Notas',
     description:
-      'Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
+      'Confira suas notas em tempo real e tenha um contato direto com o professor.',
   },
   {
     icon: <SpeakerNotesIcon />,
     title: 'Feedbacks',
     description:
-      'Count on our responsive customer support, offering assistance that goes beyond the purchase.',
+      'Os professores tem muito a dizer, essa opção de feedback permite a comunicação de uma maneira mais efetiva',
   },
   {
     icon: <AutoGraphIcon />,
     title: 'Gráficos',
     description:
-      'Enjoy a meticulously crafted product where small touches make a significant impact on your overall experience.',
+      'São grandes apoiadores para acompanhar a evolução da turma, confirma uma linha do tempo com seu progresso.',
   },
 ];
 
@@ -84,12 +84,10 @@ export default function Highlights() {
           }}
         >
           <Typography component="h2" variant="h4">
-            Highlights
+            Sessões
           </Typography>
           <Typography variant="body1" sx={{ color: 'grey.400' }}>
-            Explore why our product stands out: adaptability, durability,
-            user-friendly design, and innovation. Enjoy reliable customer support and
-            precision in every detail.
+          Explore todas as funcionalidades da nossa plataforma, com tudo que você precisa integrado em um só lugar.
           </Typography>
         </Box>
         <Grid container spacing={2.5}>

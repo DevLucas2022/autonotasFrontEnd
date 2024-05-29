@@ -46,7 +46,7 @@ export default function Features() {
               color="text.secondary"
               sx={{ mb: { xs: 2, sm: 4 } }}
             >
-              O AutoNotas é uma ferramenta inovadora dedicada à atribuição de notas e feedbacks, simplificando a comunicação entre professores e alunos. O software permite a criação de salas personalizadas, proporcionando uma organização eficiente. Os alunos, por sua vez, têm acesso instantâneo a suas notas e feedbacks a qualquer momento, promovendo uma compreensão clara do progresso acadêmico. O destaque do AutoNotas está na personalização do feedback, adaptando-se às necessidades individuais de cada aluno, fortalecendo a relação educacional e aprimorando a experiência de aprendizado de maneira significativa.
+              O Auto Notas é uma ferramenta inovadora dedicada à atribuição de notas e feedbacks, simplificando a comunicação entre professores e alunos. O software permite a criação de salas personalizadas, proporcionando uma organização eficiente. Os alunos, por sua vez, têm acesso instantâneo a suas notas e feedbacks a qualquer momento, promovendo uma compreensão clara do progresso acadêmico. O destaque do Auto Notas está na personalização do feedback, adaptando-se às necessidades individuais de cada aluno, fortalecendo a relação educacional e aprimorando a experiência de aprendizado de maneira significativa.
             </Typography>
           </div>
           <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>

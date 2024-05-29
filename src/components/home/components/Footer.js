@@ -59,17 +59,17 @@ export default function Footer() {
             <Box sx={{ ml: '-15px' }}>
               <img
                 src={
-                  'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
+                  '/images/logoauto.png'
                 }
                 style={logoStyle}
                 alt="logo of sitemark"
               />
             </Box>
             <Typography variant="body2" fontWeight={600} gutterBottom>
-              Newsletter
+              Avisos de atualizações
             </Typography>
             <Typography variant="body2" color="text.secondary" mb={2}>
-              Subscribe to our newsletter for weekly updates and promotions.
+              Se inscreva para receber e-mails que contam as novidades do nosso projeto.
             </Typography>
             <Stack direction="row" spacing={1} useFlexGap>
               <TextField
@@ -79,14 +79,14 @@ export default function Footer() {
                 variant="outlined"
                 fullWidth
                 aria-label="Enter your email address"
-                placeholder="Your email address"
+                placeholder="Digite seu e-mail"
                 inputProps={{
                   autocomplete: 'off',
                   ariaLabel: 'Enter your email address',
                 }}
               />
               <Button variant="contained" color="primary" sx={{ flexShrink: 0 }}>
-                Subscribe
+                Enviar
               </Button>
             </Stack>
           </Box>
@@ -99,59 +99,10 @@ export default function Footer() {
           }}
         >
           <Typography variant="body2" fontWeight={600}>
-            Product
+            Produto
           </Typography>
           <Link color="text.secondary" href="#">
-            AutoNotas
-          </Link>
-          <Link color="text.secondary" href="#">
-            Sobre nós
-          </Link>
-          <Link color="text.secondary" href="#">
-            Pricing
-          </Link>
-          <Link color="text.secondary" href="#">
-            FAQs
-          </Link>
-        </Box>
-        <Box
-          sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
-            gap: 1,
-          }}
-        >
-          <Typography variant="body2" fontWeight={600}>
-            Company
-          </Typography>
-          <Link color="text.secondary" href="#">
-            About us
-          </Link>
-          <Link color="text.secondary" href="#">
-            Careers
-          </Link>
-          <Link color="text.secondary" href="#">
-            Press
-          </Link>
-        </Box>
-        <Box
-          sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
-            gap: 1,
-          }}
-        >
-          <Typography variant="body2" fontWeight={600}>
-            Legal
-          </Typography>
-          <Link color="text.secondary" href="#">
-            Terms
-          </Link>
-          <Link color="text.secondary" href="#">
-            Privacy
-          </Link>
-          <Link color="text.secondary" href="#">
-            Contact
+            Auto Notas
           </Link>
         </Box>
       </Box>
