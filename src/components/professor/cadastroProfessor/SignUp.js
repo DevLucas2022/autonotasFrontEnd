@@ -38,85 +38,102 @@ export default function SignUpProfessor() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
+      <Box
+        sx={{
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundImage: 'url(/images/Background.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <Box
+            sx={{
+              backgroundColor: 'rgba(255, 255, 255, 0.8)', // Adicione um fundo branco com transparência
+              padding: 4,
+              borderRadius: 2,
+              boxShadow: 3,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%', // Garanta que ocupe toda a largura do contêiner
+            }}
+          >
             <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
               <PersonPinIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Cadastro Professor
-          </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="nome"
-                  required
-                  fullWidth
-                  id="nome"
-                  label="Nome"
-                  autoFocus
-                />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Cadastro Professor
+            </Typography>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    autoComplete="given-name"
+                    name="nome"
+                    required
+                    fullWidth
+                    id="nome"
+                    label="Nome"
+                    autoFocus
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="telefone"
+                    label="Telefone"
+                    name="telefone"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email"
+                    name="email"
+                    autoComplete="email"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    name="password"
+                    label="Senha"
+                    type="password"
+                    id="password"
+                    autoComplete="new-password"
+                  />
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="telefone"
-                  label="Telefone"
-                  name="telefone"
-                />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Cadastre-se
+              </Button>
+              <Grid container justifyContent="flex-end">
+                <Grid item>
+                  <Link href="/dashboard/professor/login" variant="body2">
+                    Já possui uma conta? Entre
+                  </Link>
+                </Grid>
               </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email"
-                  name="email"
-                  autoComplete="email"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Senha"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Cadastre-se
-            </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="#" variant="body2">
-                  Já possuí uma conta? Acessar
-                </Link>
-              </Grid>
-            </Grid>
+            </Box>
+            <Copyright sx={{ mt: 5 }} />
           </Box>
-        </Box>
-        <Copyright sx={{ mt: 5 }} />
-      </Container>
+        </Container>
+      </Box>
     </ThemeProvider>
   );
 }
