@@ -6,17 +6,16 @@ import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import SchoolIcon from '@mui/icons-material/SchoolIcon';
+import SchoolIcon from '@mui/icons-material/School'; 
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="/dashbaord">
+      <Link color="inherit" href="/dashboard">
         Auto Notas
       </Link>{' '}
       {new Date().getFullYear()}
@@ -39,17 +38,18 @@ export default function SignUpAluno() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" sx={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            justifyContent: 'center',
+            height: '100%',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
             <SchoolIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -136,8 +136,8 @@ export default function SignUpAluno() {
               </Grid>
             </Grid>
           </Box>
+          <Copyright sx={{ mt: 10 }} />
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );
