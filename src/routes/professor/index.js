@@ -6,6 +6,7 @@ import CriarDisciplina from '../../components/professor/criarDisciplina';
 import ListaDisciplinaAlunos from '../../components/professor/listaDisciplinaAlunos';
 import AdicionarDisciplinaAluno from '../../components/professor/adicionarAlunoDisciplina';
 import AtualizaNotasAluno from '../../components/professor/atualizarNotasAluno';
+import ListaDisciplinas from '../../components/professor/listaDisciplinas';
 
 const professorRoutes = [{
     path: 'professor',
@@ -18,6 +19,10 @@ const professorRoutes = [{
       {
           path: 'cadastro',
           element: <SignUpProfessor />
+      },
+      {
+        path: 'disciplinas',
+        element: <ListaDisciplinas />
       },
       {
         path: 'disciplina/criar',

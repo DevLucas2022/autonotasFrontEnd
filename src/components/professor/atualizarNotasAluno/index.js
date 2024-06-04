@@ -21,14 +21,14 @@ function AtualizaNotasAluno() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const resposta = await fetch(`https://autonotas-production.up.railway.app/alunosDisciplinas`, {
+            const resposta = await fetch(`http://localhost:8080/alunosDisciplinas`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(alunoDisciplina)
             });
-            navigate(`/professor/disciplina/lista/${idDisciplina}`)
+            navigate(`/dashboard/professor/disciplina/lista/${idDisciplina}`)
             return resposta;
         } catch (error) {
             console.log(error);

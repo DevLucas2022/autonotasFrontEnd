@@ -18,7 +18,7 @@ function AdicionarDisciplinaAluno() {
     const [alunoDisciplina, setAlunoDisciplina] = useState({});
     const { idDisciplina } = useParams();
     const [idAluno, setIdAluno] = useState();
-    const [aluno, setAluno] = useState([{}]);
+    const [aluno, setAluno] = useState([]);
 
     console.log(aluno)
 
@@ -73,7 +73,7 @@ function AdicionarDisciplinaAluno() {
                 },
                 body: JSON.stringify(dados)
             });
-            navigate(`/disciplina/get/${idDisciplina}`)
+            navigate(`/dashboard/professor/disciplina/lista/${idDisciplina}`)
             return resposta;
         } catch (error) {
             console.log(error);
@@ -100,25 +100,25 @@ function AdicionarDisciplinaAluno() {
                         </Grid>
                         <Grid item xs={12}>
                             <FormControl sx={{ marginTop: 2, width: '80%' }}>
-                                <InputLabel>Id do Aluno</InputLabel>
+                                <InputLabel>Aluno</InputLabel>
                                 <Select
-                                    id="aluno"
-                                    label="Id do Aluno"
+                                    id="id"
+                                    label="Aluno"
                                     onChange={handleSelect}
                                 >
-                                    {aluno.map((valor) => {
-                                        return <MenuItem
+                                    {aluno.map((valor) => (
+                                        <MenuItem
                                             sx={{
                                                 "& .MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input": {
-                                                    color: 'white',
                                                     minWidth: '410px',
                                                 }
                                             }}
+                                            key={valor.id}
                                             value={valor.id}
                                         >
                                             {valor.nome}
                                         </MenuItem>
-                                    })}
+                                    ))}
                                 </Select>
                             </FormControl>
                         </Grid>
