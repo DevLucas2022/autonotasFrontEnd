@@ -66,7 +66,7 @@ function AdicionarDisciplinaAluno() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const resposta = await fetch("https://autonotas-production.up.railway.app/alunosDisciplinas", {
+            const resposta = await fetch("http://localhost:8080/alunosDisciplinas", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

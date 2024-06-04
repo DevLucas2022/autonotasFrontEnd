@@ -38,7 +38,7 @@ function AtualizaNotasAluno() {
     useEffect(() => {
         const consulta = async () => {
             try {
-                const resposta = await fetch(`https://autonotas-production.up.railway.app/alunosDisciplinas/${idAlunoDisciplina}`);
+                const resposta = await fetch(`http://localhost:8080/alunosDisciplinas/${idAlunoDisciplina}`);
 
                 const dados = await resposta.json();
                 console.log(JSON.stringify(dados));
