@@ -44,7 +44,8 @@ function ListaDisciplinas() {
     return (
         <Box py={3}
             sx={{
-                height: "935px"
+                height: '100vh',
+                backgroundImage: 'url(/images/Background.png)'
             }}>
             <Grid container spacing={3} direction="row" justifyContent="center" alignItems="stretch">
                 <Grid item xs={12} textAlign='center'>

@@ -82,118 +82,120 @@ function AdicionarDisciplinaAluno() {
 
     return (
         <ThemeProvider theme={defaultTheme}>
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItens: 'center' }}>
-            <Box
-                sx={{
-                    my: 8,
-                    mx: 4,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                }}
-                component="form" noValidate onSubmit={handleSubmit}
-            >
-                <Paper sx={{padding: 5, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '700px'}}>
-                    <Grid container spacing={1} sx={{textAlign: 'center'}}>
-                        <Grid item xs={12}>
-                            <Typography variant="h5" color='black'>Adicionar Aluno a Sala</Typography>
-                        </Grid>
-                        <Grid item xs={12}>
-                            <FormControl sx={{ marginTop: 2, width: '80%' }}>
-                                <InputLabel>Aluno</InputLabel>
-                                <Select
-                                    id="id"
-                                    label="Aluno"
-                                    onChange={handleSelect}
-                                >
-                                    {aluno.map((valor) => (
-                                        <MenuItem
-                                            sx={{
-                                                "& .MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input": {
-                                                    minWidth: '410px',
-                                                }
-                                            }}
-                                            key={valor.id}
-                                            value={valor.id}
-                                        >
-                                            {valor.nome}
-                                        </MenuItem>
-                                    ))}
-                                </Select>
-                            </FormControl>
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Nota 1"
-                                type="number"
-                                id="nota1"
-                                name="nota1"
-                                value={alunoDisciplina.nota1}
-                                onChange={handleChange}
-                                sx={{ width: '80%' }}
-                            />
-                        </Grid>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItens: 'center' }}>
+                <Box
+                    sx={{
+                        my: 8,
+                        mx: 4,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        height: '100vh',
+                        backgroundImage: 'url(/images/Background.png)'
+                    }}
+                    component="form" noValidate onSubmit={handleSubmit}
+                >
+                    <Paper sx={{ padding: 5, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '700px' }}>
+                        <Grid container spacing={1} sx={{ textAlign: 'center' }}>
+                            <Grid item xs={12}>
+                                <Typography variant="h5" color='black'>Adicionar Aluno a Sala</Typography>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <FormControl sx={{ marginTop: 2, width: '80%' }}>
+                                    <InputLabel>Aluno</InputLabel>
+                                    <Select
+                                        id="id"
+                                        label="Aluno"
+                                        onChange={handleSelect}
+                                    >
+                                        {aluno.map((valor) => (
+                                            <MenuItem
+                                                sx={{
+                                                    "& .MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input": {
+                                                        minWidth: '410px',
+                                                    }
+                                                }}
+                                                key={valor.id}
+                                                value={valor.id}
+                                            >
+                                                {valor.nome}
+                                            </MenuItem>
+                                        ))}
+                                    </Select>
+                                </FormControl>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    label="Nota 1"
+                                    type="number"
+                                    id="nota1"
+                                    name="nota1"
+                                    value={alunoDisciplina.nota1}
+                                    onChange={handleChange}
+                                    sx={{ width: '80%' }}
+                                />
+                            </Grid>
 
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Nota 2"
-                                type="number"
-                                id="nota2"
-                                name="nota2"
-                                value={alunoDisciplina.nota2}
-                                onChange={handleChange}
-                                sx={{ width: '80%' }}
-                            />
-                        </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    label="Nota 2"
+                                    type="number"
+                                    id="nota2"
+                                    name="nota2"
+                                    value={alunoDisciplina.nota2}
+                                    onChange={handleChange}
+                                    sx={{ width: '80%' }}
+                                />
+                            </Grid>
 
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Nota de Atividade"
-                                type="number"
-                                id="notaAtividade"
-                                name="notaAtividade"
-                                value={alunoDisciplina.notaAtividade}
-                                onChange={handleChange}
-                                sx={{ width: '80%' }}
-                            />
-                        </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    label="Nota de Atividade"
+                                    type="number"
+                                    id="notaAtividade"
+                                    name="notaAtividade"
+                                    value={alunoDisciplina.notaAtividade}
+                                    onChange={handleChange}
+                                    sx={{ width: '80%' }}
+                                />
+                            </Grid>
 
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Média"
-                                type="number"
-                                id="media"
-                                name="media"
-                                value={alunoDisciplina.media}
-                                onChange={handleChange}
-                                sx={{ width: '80%' }}
-                            />
+                            <Grid item xs={12}>
+                                <TextField
+                                    label="Média"
+                                    type="number"
+                                    id="media"
+                                    name="media"
+                                    value={alunoDisciplina.media}
+                                    onChange={handleChange}
+                                    sx={{ width: '80%' }}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    label="Feedback"
+                                    id="feedback"
+                                    name="feedback"
+                                    value={alunoDisciplina.feedback}
+                                    onChange={handleChange}
+                                    multiline
+                                    sx={{ width: '80%' }}
+                                />
+                            </Grid>
+                            <Grid item xs={6} textAlign='right'>
+                                <Button onClick={navigate(-1)} variant="contained">
+                                    Cancelar
+                                </Button>
+                            </Grid>
+                            <Grid item xs={6} textAlign='left'>
+                                <Button type="submit" variant="contained">
+                                    Adicionar
+                                </Button>
+                            </Grid>
                         </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Feedback"
-                                id="feedback"
-                                name="feedback"
-                                value={alunoDisciplina.feedback}
-                                onChange={handleChange}
-                                multiline
-                                sx={{ width: '80%' }}
-                            />
-                        </Grid>
-                        <Grid item xs={6} textAlign='right'>
-                            <Button onClick={navigate(-1)} variant="contained">
-                                Cancelar
-                            </Button>
-                        </Grid>
-                        <Grid item xs={6} textAlign='left'>
-                            <Button type="submit" variant="contained">
-                                Adicionar
-                            </Button>
-                        </Grid>
-                    </Grid>
-                </Paper>
+                    </Paper>
+                </Box>
             </Box>
-        </Box>
         </ThemeProvider>
     );
 }

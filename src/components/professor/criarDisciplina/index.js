@@ -50,10 +50,12 @@ export default function CriarDisciplina() {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
+                    height: '100vh',
+                    backgroundImage: 'url(/images/Background.png)'
                 }}
                 component="form" noValidate onSubmit={handleSubmit}
             >
-                <Paper sx={{padding: 5, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <Paper sx={{padding: 5, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 15, border: 0.1}}>
                     <Grid container spacing={2} sx={{textAlign: 'center'}}>
                         <Grid item xs={12}>
                             <Typography component="h6" variant="h5">
@@ -69,7 +71,6 @@ export default function CriarDisciplina() {
                                 name="nomeDisciplina"
                                 onChange={handleChange}
                                 value={disciplina.nomeDisciplina}
-                                
                             />
                         </Grid>
                         <Grid item xs={6} sx={{ textAlign: 'right' }}>

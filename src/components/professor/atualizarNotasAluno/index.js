@@ -61,11 +61,13 @@ function AtualizaNotasAluno() {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
+                    height: '100vh',
+                    backgroundImage: 'url(/images/Background.png)'
                 }}
                 noValidate onSubmit={handleSubmit}
             >
                 <Paper sx={{ padding: 5, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '700px' }}>
-                    <Grid container spacing={2} sx={{textAlign: 'center'}}>
+                    <Grid container spacing={2} sx={{ textAlign: 'center' }}>
                         <Grid item xs={12}>
                             <Typography variant="h5" color='black'>Atualizar nota do Aluno</Typography>
                         </Grid>
@@ -99,7 +101,7 @@ function AtualizaNotasAluno() {
                                 id="notaAtividade"
                                 name="notaAtividade"
                                 label="Nota de Atividade"
-                                value={alunoDisciplina.notaAtividade}
+                                value={alunoDisciplina.notaAtividade|| ''}
                                 onChange={handleChange}
                                 sx={{ width: '80%' }}
                             />
@@ -111,7 +113,7 @@ function AtualizaNotasAluno() {
                                 id="media"
                                 name="media"
                                 label="Média"
-                                value={alunoDisciplina.media}
+                                value={alunoDisciplina.media || ''}
                                 onChange={handleChange}
                                 sx={{ width: '80%' }}
                             />
@@ -123,7 +125,7 @@ function AtualizaNotasAluno() {
                                 name="feedback"
                                 label="Feedback"
                                 multiline
-                                value={alunoDisciplina.feedback}
+                                value={alunoDisciplina.feedback || ''}
                                 onChange={handleChange}
                                 sx={{ width: '80%' }}
                             />
