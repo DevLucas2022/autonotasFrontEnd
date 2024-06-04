@@ -29,13 +29,14 @@ const items = [
     icon: < SchoolIcon/>,
     title: 'Alunos',
     description:
-      'Alunos com um alto nível de excelência. Estudantes dedicados e talentosos que se destacam em suas áreas, prontos para transformar o futuro e alcançar grandes sucessos.',
+      'Alunos com um alto nível de comprometimento. Estudantes dedicados e talentosos que se destacam em suas áreas, prontos para transformar o futuro e alcançar grandes sucessos.',
   },
   {
     icon: <MeetingRoomIcon />,
     title: 'Salas',
     description:
-      'Junte sua turma e evolua junto',
+      'Descubra a sala em que está inserido e conheça sua turma. Ambientes dinâmicos e colaborativos onde cada aluno contribui com suas habilidades únicas, prontos para explorar novos conhecimentos e alcançar grandes sucessos juntos.'
+      
   },
   {
     icon: <FactCheckIcon />,
@@ -53,7 +54,7 @@ const items = [
     icon: <AutoGraphIcon />,
     title: 'Gráficos',
     description:
-      'São grandes apoiadores para acompanhar a evolução da turma, confirma uma linha do tempo com seu progresso.',
+      'São grandes apoiadores para acompanhar a evolução da turma, veja uma linha do tempo com seu progresso.',
   },
 ];
 

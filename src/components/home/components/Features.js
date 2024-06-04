@@ -19,8 +19,8 @@ const items = [
     title: 'Entre na nossa plataforma',
     description:
       'Para ter acesso a todas as funcionalidades do nosso site faça login.',
-    imageLight: 'url("/static/images/templates/templates-images/dash-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
+    imageLight: 'url("/images/randowImg/Professor_rafiki.png")',
+    imageDark: 'url("/images/randowImg/Professor_rafiki.png")',
   }
 ];
 
@@ -46,8 +46,8 @@ export default function Features() {
               color="text.secondary"
               sx={{ mb: { xs: 2, sm: 4 } }}
             >
-              O Auto Notas é uma ferramenta inovadora dedicada à atribuição de notas e feedbacks, simplificando a comunicação entre professores e alunos. O software permite a criação de salas personalizadas, proporcionando uma organização eficiente. Os alunos, por sua vez, têm acesso instantâneo a suas notas e feedbacks a qualquer momento, promovendo uma compreensão clara do progresso acadêmico. O destaque do Auto Notas está na personalização do feedback, adaptando-se às necessidades individuais de cada aluno, fortalecendo a relação educacional e aprimorando a experiência de aprendizado de maneira significativa.
-            </Typography>
+            O Auto Notas é uma ferramenta inovadora que facilita a atribuição de notas e feedbacks, melhorando a comunicação entre professores e alunos. Com salas personalizadas, o software organiza eficientemente as avaliações, permitindo que os alunos acessem suas notas e feedbacks instantaneamente. A personalização do feedback atende às necessidades individuais dos alunos, fortalecendo a relação educacional e aprimorando a experiência de aprendizado. A ferramenta inclui uma dashboard interativa onde os alunos podem acompanhar seu desempenho ao longo do período letivo, visualizando suas conquistas e áreas a melhorar. O Auto Notas é um poderoso aliado na organização e personalização do ensino, tornando o processo educacional mais eficiente, transparente e motivador.
+                        </Typography>
           </div>
           <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>
             {items.map(({ title }, index) => (
@@ -90,7 +90,7 @@ export default function Features() {
                   theme.palette.mode === 'light'
                     ? items[selectedItemIndex].imageLight
                     : items[selectedItemIndex].imageDark,
-                backgroundSize: 'cover',
+                backgroundSize: 'contain',
                 backgroundPosition: 'center',
                 minHeight: 280,
               }}
