@@ -10,6 +10,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState } from 'react';
 
 function Copyright(props) {
   return (
@@ -27,13 +28,35 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignUpAluno() {
-  const handleSubmit = (event) => {
+  const [aluno, setAluno] = useState({});
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setAluno((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    alert(JSON.stringify(aluno));
+    try {
+      const resposta = await fetch("http://localhost:8080/alunos", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(aluno)
+      });
+      console.log(aluno)
+      return resposta;
+    } catch (error) {
+      console.log(error);
+    }
+    /*const data = new FormData(event.currentTarget);
     console.log({
       email: data.get('email'),
       password: data.get('password'),
-    });
+    });*/
   };
 
   return (
@@ -80,6 +103,7 @@ export default function SignUpAluno() {
                     fullWidth
                     id="nome"
                     label="Nome"
+                    onChange={handleChange}
                     autoFocus
                   />
                 </Grid>
@@ -90,6 +114,8 @@ export default function SignUpAluno() {
                     name="cep"
                     label="Cep"
                     type="cep"
+                    value={aluno.cep}
+                    onChange={handleChange}
                     id="cep"
                   />
                 </Grid>
@@ -100,6 +126,8 @@ export default function SignUpAluno() {
                     name="ra"
                     label="Ra"
                     type="number"
+                    value={aluno.ra}
+                    onChange={handleChange}
                     id="ra"
                   />
                 </Grid>
@@ -110,6 +138,8 @@ export default function SignUpAluno() {
                     id="curso"
                     label="Curso"
                     name="curso"
+                    value={aluno.curso}
+                    onChange={handleChange}
                     autoComplete="nome-do-curso"
                   />
                 </Grid>
@@ -120,6 +150,8 @@ export default function SignUpAluno() {
                     id="email"
                     label="Email"
                     name="email"
+                    value={aluno.email}
+                    onChange={handleChange}
                     autoComplete="email"
                   />
                 </Grid>
@@ -127,11 +159,13 @@ export default function SignUpAluno() {
                   <TextField
                     required
                     fullWidth
-                    name="password"
+                    name="senha"
                     label="Senha"
                     type="password"
-                    id="password"
-                    autoComplete="new-password"
+                    id="senha"
+                    value={aluno.senha}
+                    onChange={handleChange}
+                    autoComplete="new-senha"
                   />
                 </Grid>
               </Grid>
