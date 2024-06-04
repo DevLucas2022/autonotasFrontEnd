@@ -98,18 +98,19 @@ const handleSubmit = async (event) => {
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
-              my: 8,
-              mx: 4,
+              my: 30,
+              mx: 5,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
             }}
           >
+            
             <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
               <SchoolIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Auno
+              Aluno
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -159,4 +160,3 @@ const handleSubmit = async (event) => {
     </ThemeProvider>
   );
 }
-export {SignInSideAluno};
