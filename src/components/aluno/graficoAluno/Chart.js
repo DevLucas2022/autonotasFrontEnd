@@ -42,7 +42,8 @@ export default function Chart() {
               tickNumber: 9,
               tickLabelStyle: {
                 fill: theme.palette.text.primary,
-                fontSize: '14px',
+                fontSize: '16px', // Tamanho aumentado
+                fontWeight: 'bold', // Negrito adicionado
               },
             },
           ]}
@@ -51,7 +52,8 @@ export default function Chart() {
               label: 'Média Notas',
               labelStyle: {
                 fill: theme.palette.text.primary,
-                fontSize: '16px',
+                fontSize: '16px', // Tamanho aumentado
+                fontWeight: 'bold', // Negrito adicionado
               },
               tickLabelStyle: {
                 fill: theme.palette.text.primary,

@@ -61,6 +61,10 @@ export default function Dashboard() {
             flexGrow: 1,
             height: '100vh',
             overflow: 'auto',
+            backgroundImage: 'url(/images/Background.png)', // Caminho da imagem no diretório public
+            backgroundSize: 'cover', // Ajusta a imagem para cobrir todo o fundo
+            backgroundPosition: 'center', // Centraliza a imagem
+            backgroundRepeat: 'no-repeat', // Evita a repetição da imagem
           }}
         >
           <Toolbar />
