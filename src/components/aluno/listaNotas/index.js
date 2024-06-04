@@ -13,43 +13,43 @@ const columns = [
       field: 'nomeDisciplina',
       headerName: 'Nome da Disciplina',
       width: 250,
-      editable: true,
+      editable: false,
     },
     {
       field: 'nomeProfessor',
       headerName: 'Nome do Professor',
       width: 250,
-      editable: true,
+      editable: false,
     },
     {
       field: 'nota1',
       headerName: 'Nota P1',
       width: 100,
-      editable: true,
+      editable: false,
     },
     {
       field: 'nota2',
       headerName: 'Nota P2',
       width: 100,
-      editable: true,
+      editable: false,
     },
     {
       field: 'notaAtividade',
       headerName: 'Nota Atividade',
       width: 150,
-      editable: true,
+      editable: false,
     },
     {
       field: 'media',
       headerName: 'Média',
       width: 100,
-      editable: true,
+      editable: false,
     },
     {
       field: 'feedback',
       headerName: 'Feedback',
       width: 270,
-      editable: true,
+      editable: false,
     },
 ];
 
@@ -107,6 +107,9 @@ function ListaNotas() {
                   }}
                 pageSizeOptions={[5]}
                 disableRowSelectionOnClick
+                sx={{
+                  borderColor: 'black'
+                }}
               />
             </Grid>
           </Grid> 
