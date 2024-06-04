@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import { LineChart, axisClasses } from '@mui/x-charts';
-
 import Title from './Title';
 
 // Generate Sales Data
@@ -27,40 +26,54 @@ export default function Chart() {
   return (
     <React.Fragment>
       <Title>Sala</Title>
-      <div style={{ width: '100%', flexGrow: 1, overflow: 'hidden' }}>
+      <div style={{ width: '100%', height: '300px', overflow: 'hidden' }}>
         <LineChart
           dataset={data}
           margin={{
-            top: 16,
-            right: 20,
-            left: 70,
-            bottom: 30,
+            top: 32,
+            right: 32,
+            left: 64,
+            bottom: 48,
           }}
           xAxis={[
             {
               scaleType: 'point',
               dataKey: 'time',
-              tickNumber: 2,
-              tickLabelStyle: theme.typography.body2,
+              tickNumber: 9,
+              tickLabelStyle: {
+                fill: theme.palette.text.primary,
+                fontSize: '14px',
+              },
             },
           ]}
           yAxis={[
             {
               label: 'Média Notas',
               labelStyle: {
-                ...theme.typography.body1,
                 fill: theme.palette.text.primary,
+                fontSize: '16px',
               },
-              tickLabelStyle: theme.typography.body2,
+              tickLabelStyle: {
+                fill: theme.palette.text.primary,
+                fontSize: '14px',
+              },
               max: 10,
-              tickNumber: 3,
+              tickNumber: 5,
             },
           ]}
           series={[
             {
               dataKey: 'amount',
-              showMark: false,
-              color: theme.palette.primary.light,
+              showMark: true,
+              markStyle: {
+                fill: theme.palette.primary.main,
+                stroke: theme.palette.primary.main,
+              },
+              color: theme.palette.primary.main,
+              lineStyle: {
+                stroke: theme.palette.primary.main,
+                strokeWidth: 2,
+              },
             },
           ]}
           sx={{
