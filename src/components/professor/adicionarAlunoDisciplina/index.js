@@ -50,7 +50,7 @@ function AdicionarDisciplinaAluno() {
     useEffect(() => {
         const consulta = async () => {
             try {
-                const resposta = await fetch(`https://autonotas-production.up.railway.app/alunos`);
+                const resposta = await fetch(`http://localhost:8080/alunos`);
 
                 const dados = await resposta.json();
                 console.log(JSON.stringify(dados));

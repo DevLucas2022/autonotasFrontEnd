@@ -50,32 +50,32 @@ export default function SignInSideAluno() {
     setLogin((values) => ({ ...values, [name]: value }));
   };
 
-const handleSubmit = async (event) => {
-    event.preventDefault();
-    alert(JSON.stringify(login));
-    try {
-      const resposta = await fetch("http://localhost:8080/alunos/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(login)
-      });
-      console.log(resposta);
-      if(resposta.ok){
-        const id = await resposta.json();
-        alert("Login realizado com sucesso!");
-        console.log(`Resposta do server:${id}`)
-        //setUserId(id);
-        navigate(`/dashboard/aluno/notas/${id}`);
-      }else{
-        console.log(`Erro na aplicação: ${resposta.status}`)
+  const handleSubmit = async (event) => {
+      event.preventDefault();
+      alert(JSON.stringify(login));
+      try {
+        const resposta = await fetch("http://localhost:8080/alunos/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(login)
+        });
+        console.log(resposta);
+        if(resposta.ok){
+          const id = await resposta.json();
+          alert("Login realizado com sucesso!");
+          console.log(`Resposta do server:${id}`)
+          //setUserId(id);
+          navigate(`/dashboard/aluno/notas/${id}`);
+        }else{
+          console.log(`Erro na aplicação: ${resposta.status}`)
+        }
+        return resposta;
+      } catch (error) {
+        console.log(error);
       }
-      return resposta;
-    } catch (error) {
-      console.log(error);
-    }
-};
+  };
 
   return (
     <ThemeProvider theme={defaultTheme}>
