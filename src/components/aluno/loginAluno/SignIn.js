@@ -10,6 +10,7 @@ import Grid from '@mui/material/Grid';
 import SchoolIcon from '@mui/icons-material/School';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from 'react-router';
 
 function Copyright(props) {
   return (
@@ -40,15 +41,41 @@ const defaultTheme = createTheme();
 
 export default function SignInSideAluno() {
   const [backgroundImage] = useState(images[Math.floor(Math.random() * images.length)]);
+  const navigate = useNavigate();
+  const [login, setLogin] = useState({});
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setLogin((values) => ({ ...values, [name]: value }));
   };
+
+const handleSubmit = async (event) => {
+    event.preventDefault();
+    alert(JSON.stringify(login));
+    try {
+      const resposta = await fetch("http://localhost:8080/alunos/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(login)
+      });
+      console.log(resposta);
+      if(resposta.ok){
+        const id = await resposta.json();
+        alert("Login realizado com sucesso!");
+        console.log(`Resposta do server:${id}`)
+        //setUserId(id);
+        navigate(`/dashboard/aluno/notas/${id}`);
+      }else{
+        console.log(`Erro na aplicação: ${resposta.status}`)
+      }
+      return resposta;
+    } catch (error) {
+      console.log(error);
+    }
+};
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -92,6 +119,8 @@ export default function SignInSideAluno() {
                 id="email"
                 label="Email"
                 name="email"
+                value={login.email}
+                onChange={handleChange}
                 autoComplete="email"
                 autoFocus
               />
@@ -99,11 +128,13 @@ export default function SignInSideAluno() {
                 margin="normal"
                 required
                 fullWidth
-                name="password"
+                name="senha"
                 label="Senha"
                 type="password"
-                id="password"
-                autoComplete="current-password"
+                id="senha"
+                value={login.senha}
+                onChange={handleChange}
+                autoComplete="current-senha"
               />
               <Button
                 type="submit"
