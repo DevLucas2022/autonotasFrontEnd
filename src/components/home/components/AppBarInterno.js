@@ -85,10 +85,10 @@ function AppBarInterno({ mode, toggleColorMode }) {
             >
               <img
                 src={
-                  '/images/randowImg/logoAutonotasBigger-removebg-preview.png'
+                  '/images/logoauto.png'
                 }
                 style={logoStyle}
-                alt="logo of sitemark"
+                alt="logo Auto Notas"
               />
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <MenuItem
@@ -96,7 +96,7 @@ function AppBarInterno({ mode, toggleColorMode }) {
                   sx={{ py: '6px', px: '12px' }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    Sobre nós
+
                   </Typography>
                 </MenuItem>
                 <MenuItem
@@ -104,7 +104,7 @@ function AppBarInterno({ mode, toggleColorMode }) {
                   sx={{ py: '6px', px: '12px' }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    FAQ
+
                   </Typography>
                 </MenuItem>
               </Box>
@@ -116,26 +116,14 @@ function AppBarInterno({ mode, toggleColorMode }) {
                 alignItems: 'center',
               }}
             >
-              <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-              <Button
-                color="primary"
-                variant="text"
-                size="small"
-                component="a"
-                href="/material-ui/getting-started/templates/sign-in/"
-                target="_blank"
-              >
-                Entre
-              </Button>
               <Button
                 color="primary"
                 variant="contained"
-                size="small"
+                size="medium"
                 component="a"
-                href="/material-ui/getting-started/templates/sign-up/"
-                target="_blank"
+                href="/dashboard/aluno/graficos"
               >
-                Cadastre-se
+                Gráficos
               </Button>
             </Box>
             <Box sx={{ display: { sm: '', md: 'none' } }}>
