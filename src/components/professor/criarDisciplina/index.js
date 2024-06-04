@@ -19,7 +19,7 @@ export default function CriarDisciplina() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const resposta = await fetch("https://autonotas-production.up.railway.app/disciplinas", {
+            const resposta = await fetch("http://localhost:8080/disciplinas", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

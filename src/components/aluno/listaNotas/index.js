@@ -93,7 +93,7 @@ function ListaNotas() {
             <Grid item xs={12}>
               <Typography variant="h4" color='black'>Notas</Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
               <DataGrid
                 columns={columns}
                 getRowId={() => uuidv4()}
@@ -108,7 +108,7 @@ function ListaNotas() {
                 pageSizeOptions={[5]}
                 disableRowSelectionOnClick
                 sx={{
-                  borderColor: 'black'
+                  width: '50%'
                 }}
               />
             </Grid>
