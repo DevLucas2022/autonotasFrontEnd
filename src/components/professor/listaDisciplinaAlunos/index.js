@@ -12,31 +12,31 @@ const columns = [
         field: 'nomeAluno',
         headerName: 'Nome do Aluno',
         width: 300,
-        editable: true,
+        editable: false,
     },
     {
         field: 'nota1',
         headerName: 'Nota P1',
         width: 100,
-        editable: true,
+        editable: false,
     },
     {
         field: 'nota2',
         headerName: 'Nota P2',
         width: 100,
-        editable: true,
+        editable: false,
     },
     {
         field: 'notaAtividade',
         headerName: 'Nota Atividade',
         width: 150,
-        editable: true,
+        editable: false,
     },
     {
         field: 'media',
         headerName: 'Média',
         width: 100,
-        editable: true,
+        editable: false,
     },
 ];
 
@@ -48,7 +48,7 @@ function ListaDisciplinaAlunos() {
     useEffect(() => {
         const consulta = async () => {
             try {
-                const resposta = await fetch(`https://autonotas-production.up.railway.app/alunosDisciplinas/professor/disciplina/${idDisciplina}`);
+                const resposta = await fetch(`http://localhost:8080/alunosDisciplinas/professor/disciplina/${idDisciplina}`);
 
                 const dados = await resposta.json();
                 console.log(JSON.stringify(dados));
@@ -67,9 +67,8 @@ function ListaDisciplinaAlunos() {
     }
 
     const handleClick = (idAlunoDisciplina) => {
-        navigate(`/professor/disciplina/update/${idAlunoDisciplina}/${idDisciplina}`)
+        navigate(`/professor/disciplina/aluno/atualiza/${rows.idAlunoDisciplina}/${idDisciplina}`)
     }
-
     return (
         <Box py={3}
             sx={{
