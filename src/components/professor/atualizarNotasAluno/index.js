@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 // react-router-dom components
 import { useNavigate, useParams } from "react-router-dom";
 import { Box, Button, Paper, Grid, TextField, ThemeProvider, createTheme, Typography } from "@mui/material";
@@ -21,6 +20,7 @@ function AtualizaNotasAluno() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        console.log(JSON.stringify(alunoDisciplina))
         try {
             const resposta = await fetch(`http://localhost:8080/alunosDisciplinas`, {
                 method: "PUT",
@@ -40,7 +40,6 @@ function AtualizaNotasAluno() {
         const consulta = async () => {
             try {
                 const resposta = await fetch(`http://localhost:8080/alunosDisciplinas/${idAlunoDisciplina}`);
-
                 const dados = await resposta.json();
                 console.log(JSON.stringify(dados));
                 setAlunoDisciplina(dados);
@@ -109,17 +108,16 @@ function AtualizaNotasAluno() {
                             />
                         </Grid>
 
-                        {/* <Grid item xs={12}>
+                         <Grid item xs={12}>
                             <TextField
-                                type="number"
-                                id="media"
-                                name="media"
-                                label="Média"
-                                value={alunoDisciplina.media || ''}
+                                id="ponto_melhoria"
+                                name="ponto_melhoria"
+                                label="Ponto de melhoria"
+                                value={alunoDisciplina.ponto_melhoria || ''}
                                 onChange={handleChange}
                                 sx={{ width: '80%' }}
                             />
-                        </Grid> */}
+                        </Grid>
 
                         <Grid item xs={12}>
                             <TextField

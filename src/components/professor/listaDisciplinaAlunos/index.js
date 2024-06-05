@@ -12,7 +12,7 @@ const columns = [
     {
         field: 'nomeAluno',
         headerName: 'Nome do Aluno',
-        width: 300,
+        width: 125,
         editable: false,
     },
     {
@@ -40,11 +40,17 @@ const columns = [
         editable: false,
     },
     {
-        field: 'feedback',
-        headerName: 'Feedback',
-        width: 300,
+        field: 'ponto_melhoria',
+        headerName: 'Ponto de melhoria',
+        width: 200,
         editable: false,
     },
+    {
+        field: 'feedback',
+        headerName: 'Feedback',
+        width: 200,
+        editable: false,
+    }
 ];
 
 function ListaDisciplinaAlunos() {
