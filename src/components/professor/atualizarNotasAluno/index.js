@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 // react-router-dom components
 import { useNavigate, useParams } from "react-router-dom";
 import { Box, Button, Paper, Grid, TextField, ThemeProvider, createTheme, Typography } from "@mui/material";
+import AppBarProfessor from "../../home/components/AppBarProfessor";
 
 const defaultTheme = createTheme();
 
@@ -66,6 +67,7 @@ function AtualizaNotasAluno() {
                 }}
                 noValidate onSubmit={handleSubmit}
             >
+                <AppBarProfessor />
                 <Paper sx={{ padding: 5, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '700px' }}>
                     <Grid container spacing={2} sx={{ textAlign: 'center' }}>
                         <Grid item xs={12}>
