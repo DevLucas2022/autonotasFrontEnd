@@ -120,6 +120,7 @@ export default function SignInSideAluno() {
                 id="email"
                 label="Email"
                 name="email"
+                onChange={handleChange}
                 value={login.email}
                 onChange={handleChange}
                 autoComplete="email"

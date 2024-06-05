@@ -107,7 +107,7 @@ function AtualizaNotasAluno() {
                             />
                         </Grid>
 
-                        <Grid item xs={12}>
+                        {/* <Grid item xs={12}>
                             <TextField
                                 type="number"
                                 id="media"
@@ -117,7 +117,7 @@ function AtualizaNotasAluno() {
                                 onChange={handleChange}
                                 sx={{ width: '80%' }}
                             />
-                        </Grid>
+                        </Grid> */}
 
                         <Grid item xs={12}>
                             <TextField

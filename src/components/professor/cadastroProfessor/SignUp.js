@@ -10,6 +10,7 @@ import PersonPinIcon from '@mui/icons-material/PersonPin';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState } from 'react'
 
 function Copyright(props) {
   return (
@@ -27,13 +28,31 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignUpProfessor() {
-  const handleSubmit = (event) => {
+
+  const [professor, setProfessor] = useState({});
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setProfessor((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    alert(JSON.stringify(professor));
+    try {
+      const resposta = await fetch("http://localhost:8080/professores", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(professor)
+      });
+      alert("Cadastro feito com sucesso!")
+      return resposta;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -80,6 +99,7 @@ export default function SignUpProfessor() {
                     fullWidth
                     id="nome"
                     label="Nome"
+                    onChange={handleChange}
                     autoFocus
                   />
                 </Grid>
@@ -89,6 +109,7 @@ export default function SignUpProfessor() {
                     fullWidth
                     id="telefone"
                     label="Telefone"
+                    onChange={handleChange}
                     name="telefone"
                   />
                 </Grid>
@@ -97,6 +118,7 @@ export default function SignUpProfessor() {
                     required
                     fullWidth
                     id="email"
+                    onChange={handleChange}
                     label="Email"
                     name="email"
                     autoComplete="email"
@@ -106,11 +128,12 @@ export default function SignUpProfessor() {
                   <TextField
                     required
                     fullWidth
-                    name="password"
+                    name="senha"
                     label="Senha"
+                    onChange={handleChange}
                     type="password"
-                    id="password"
-                    autoComplete="new-password"
+                    id="senha"
+                    autoComplete="new-senha"
                   />
                 </Grid>
               </Grid>
