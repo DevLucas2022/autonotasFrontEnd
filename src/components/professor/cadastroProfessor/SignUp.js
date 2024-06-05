@@ -10,7 +10,8 @@ import PersonPinIcon from '@mui/icons-material/PersonPin';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState } from 'react'
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 function Copyright(props) {
   return (
@@ -28,7 +29,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignUpProfessor() {
-
+  const navigate = useNavigate();
   const [professor, setProfessor] = useState({});
 
   const handleChange = (event) => {
@@ -39,7 +40,7 @@ export default function SignUpProfessor() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    alert(JSON.stringify(professor));
+    
     try {
       const resposta = await fetch("http://localhost:8080/professores", {
         method: "POST",
@@ -50,6 +51,7 @@ export default function SignUpProfessor() {
       });
       alert("Cadastro feito com sucesso!")
       return resposta;
+      navigate(`/dashboard/professor/login`);
     } catch (error) {
       console.log(error);
     }
