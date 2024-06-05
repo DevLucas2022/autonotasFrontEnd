@@ -9,15 +9,15 @@ function createData(time, amount) {
 }
 
 const data = [
-  createData('Fev', 8),
-  createData('Mar', 9),
-  createData('Abr', 10),
-  createData('Mai', 6),
-  createData('Jun', 6),
-  createData('Ago', 7),
-  createData('Set', 7),
-  createData('Out', 6),
-  createData('Nov', 7),
+  createData('Fev', ),
+  createData('Mar', ),
+  createData('Abr', ),
+  createData('Mai', 9),
+  createData('Jun', 8),
+  createData('Ago', ),
+  createData('Set', ),
+  createData('Out', ),
+  createData('Nov', ),
 ];
 
 export default function Chart() {

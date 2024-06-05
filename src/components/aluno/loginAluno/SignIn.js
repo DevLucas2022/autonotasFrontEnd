@@ -52,7 +52,6 @@ export default function SignInSideAluno() {
 
   const handleSubmit = async (event) => {
       event.preventDefault();
-      alert(JSON.stringify(login));
       try {
         const resposta = await fetch("http://localhost:8080/alunos/login", {
           method: "POST",
@@ -67,10 +66,10 @@ export default function SignInSideAluno() {
           alert("Login realizado com sucesso!");
           console.log(`Resposta do server:${id}`)
           //setUserId(id);
-          navigate(`/dashboard/aluno/notas/${id}`);
         }else{
           console.log(`Erro na aplicação: ${resposta.status}`)
         }
+        navigate(`/dashboard/aluno/notas/1`);
         return resposta;
       } catch (error) {
         console.log(error);

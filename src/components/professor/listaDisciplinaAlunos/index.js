@@ -6,8 +6,6 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import AppBarProfessor from "../../home/components/AppBarProfessor";
 
-
-
 const columns = [
     {
         field: 'nomeAluno',
@@ -89,7 +87,7 @@ function ListaDisciplinaAlunos() {
                 backgroundImage: 'url(/images/Background.png)'
             }}>
             <Grid container spacing={3} direction="row" justifyContent="center" alignItems="stretch">
-                <Grid item xs={12} marginBottom={8}><AppBarProfessor /></Grid>
+                <Grid item xs={12} marginBottom={10}><AppBarProfessor /></Grid>
                 <Grid item xs={6} md={6} lg={8} textAlign="right">
                     <Button onClick={handleAddAluno} variant="contained">Adicionar Aluno</Button>
                 </Grid>

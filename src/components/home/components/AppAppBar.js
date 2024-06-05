@@ -122,20 +122,20 @@ function AppAppBar({ mode, toggleColorMode }) {
                 variant="text"
                 size="small"
                 component="a"
-                href="/material-ui/getting-started/templates/sign-in/"
+                href="/dashboard/aluno/login"
                 target="_blank"
               >
-                Entre
+                Aluno
               </Button>
               <Button
                 color="primary"
                 variant="contained"
                 size="small"
                 component="a"
-                href="/material-ui/getting-started/templates/sign-up/"
+                href="/dashboard/professor/login"
                 target="_blank"
               >
-                Cadastre-se
+                Professor
               </Button>
             </Box>
             <Box sx={{ display: { sm: '', md: 'none' } }}>

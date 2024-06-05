@@ -61,7 +61,7 @@ export default function Hero() {
             color="text.secondary"
             sx={{ alignSelf: 'center', width: { sm: '100%', md: '80%' } }}
           >
-            Transformando a comunicação entre professores e alunos, um feedback de cada vez.
+            Transformando a comunicação entre professores e alunos, um feedback de cada vez, nossa plataforma promove um ambiente de aprendizado mais eficiente e colaborativo, onde cada interação conta para o sucesso educacional.
           </Typography>
           <Stack
             direction={{ xs: 'column', sm: 'row' }}

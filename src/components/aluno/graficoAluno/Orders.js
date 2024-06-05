@@ -12,11 +12,10 @@ function createData(id, date, name, shipTo, paymentMethod, amount) {
 }
 
 const rows = [
-  createData(0, '10 Jun, 2024', 'Andrea Zotovici', 'Aprendizagem de Máquina', 'Atividade', 9),
-  createData(1, '11 Jun, 2024', 'Ismael Paredes', 'Segurança', 'Prova 1', 10),
-  createData(2, '16 Ago, 2024', 'Tom Scholz', 'Estrutura de Dados', 'Atividade', 8),
-  createData(3, '16 Ago, 2024', 'Michael Jackson', 'Redação', 'Atividade', 6),
-  createData(4, '20 Nov, 2024', 'Bruce Springsteen', 'Inglês', 'Prova 2', 9),
+  createData(0, '04 Jun, 2024', 'Andrea Zotovici', 'Estrutura de Dados', 'Prova 1', 8),
+  createData(1, '04 Jun, 2024', 'Vinicius Heltai', 'Tecnicas de Programação ||', 'Prova 1', 8),
+  createData(2, '04 Jun, 2024', 'Ismael Paredes', 'Segurança', 'Prova 1', 8),
+  createData(3, '29 Maio, 2024', 'Renan Rodrigues', 'Computação em Nuvem', 'Atividade', 9),
 ];
 
 export default function Orders() {

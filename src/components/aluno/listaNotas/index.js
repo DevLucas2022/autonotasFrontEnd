@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 import AppBarInterno from "../../home/components/AppBarInterno";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-const { Box, Typography, Grid, Card, Divider } = require("@mui/material");
+const { Box, Typography, Grid, Card } = require("@mui/material");
 const { DataGrid } = require("@mui/x-data-grid");
 
 const defaultTheme = createTheme();
