@@ -18,12 +18,8 @@ function AdicionarDisciplinaAluno() {
     const [alunoDisciplina, setAlunoDisciplina] = useState({});
     const { idDisciplina } = useParams();
     const [idAluno, setIdAluno] = useState();
-    const [aluno, setAluno] = useState([]);
 
-    console.log(aluno)
-
-
-    const { nota1, nota2, notaAtividade, media } = alunoDisciplina
+    const { nota1, nota2, notaAtividade, feedback } = alunoDisciplina
 
     const dados = {
         idDisciplina,
@@ -31,14 +27,12 @@ function AdicionarDisciplinaAluno() {
         nota1,
         nota2,
         notaAtividade,
-        media
+        feedback
     }
 
     const handleSelect = (event) => {
         setIdAluno(event.target.value);
     };
-
-    console.log(idAluno);
 
 
     const handleChange = (event) => {
@@ -46,22 +40,6 @@ function AdicionarDisciplinaAluno() {
         const value = event.target.value;
         setAlunoDisciplina((values) => ({ ...values, [name]: value }));
     };
-
-    useEffect(() => {
-        const consulta = async () => {
-            try {
-                const resposta = await fetch(`http://localhost:8080/alunos`);
-
-                const dados = await resposta.json();
-                console.log(JSON.stringify(dados));
-
-                setAluno(dados);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        consulta();
-    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -104,23 +82,14 @@ function AdicionarDisciplinaAluno() {
                                 <FormControl sx={{ marginTop: 2, width: '80%' }}>
                                     <InputLabel>Aluno</InputLabel>
                                     <Select
-                                        id="id"
+                                        id="idAluno"
                                         label="Aluno"
                                         onChange={handleSelect}
+                                        value={''}
                                     >
-                                        {aluno.map((valor) => (
-                                            <MenuItem
-                                                sx={{
-                                                    "& .MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input": {
-                                                        minWidth: '410px',
-                                                    }
-                                                }}
-                                                key={valor.id}
-                                                value={valor.id}
-                                            >
-                                                {valor.nome}
-                                            </MenuItem>
-                                        ))}
+                                        <MenuItem value={1}>João</MenuItem>
+                                        <MenuItem value={2}>Luis Felipe</MenuItem>
+                                        <MenuItem value={3}>Marcos Roberto da Silva</MenuItem>
                                     </Select>
                                 </FormControl>
                             </Grid>
@@ -155,18 +124,6 @@ function AdicionarDisciplinaAluno() {
                                     id="notaAtividade"
                                     name="notaAtividade"
                                     value={alunoDisciplina.notaAtividade}
-                                    onChange={handleChange}
-                                    sx={{ width: '80%' }}
-                                />
-                            </Grid>
-
-                            <Grid item xs={12}>
-                                <TextField
-                                    label="Média"
-                                    type="number"
-                                    id="media"
-                                    name="media"
-                                    value={alunoDisciplina.media}
                                     onChange={handleChange}
                                     sx={{ width: '80%' }}
                                 />

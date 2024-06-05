@@ -67,10 +67,10 @@ export default function SignInSideProfessor() {
         alert("Login realizado com sucesso!");
         console.log(`Resposta do server:${id}`)
         //setUserId(id);
-        navigate(`/dashboard/professor/disciplinas/${id}`);
       }else{
         console.log(`Erro na aplicação: ${resposta.status}`)
       }
+      navigate(`/dashboard/professor/disciplinas`);
       return resposta;
     } catch (error) {
       console.log(error);

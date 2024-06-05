@@ -12,9 +12,9 @@ function createData(id, date, name, shipTo, paymentMethod, amount) {
 }
 
 const rows = [
-  createData(0, '04 Jun, 2024', 'Andrea Zotovici', 'Estrutura de Dados', 'Prova 1', 8),
-  createData(1, '04 Jun, 2024', 'Vinicius Heltai', 'Tecnicas de Programação ||', 'Prova 1', 8),
-  createData(2, '04 Jun, 2024', 'Ismael Paredes', 'Segurança', 'Prova 1', 8),
+  createData(0, '04 Jun, 2024', 'Luis', 'Algoritmo e logica de programação', 'Prova 1', 10),
+  createData(1, '04 Jun, 2024', 'Luis', 'Experiencia do usuário', 'Prova 1', 8),
+  createData(2, '04 Jun, 2024', 'Luis  Felipe', 'Técnica de Programação', 'Prova 1', 7),
   createData(3, '29 Maio, 2024', 'Renan Rodrigues', 'Computação em Nuvem', 'Atividade', 9),
 ];
 

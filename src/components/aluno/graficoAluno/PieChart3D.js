@@ -4,7 +4,7 @@ import { Chart } from 'react-google-charts';
 const PieChart3D = () => {
   const data = [
     ['Task', 'Hours per Day'],
-    ['Lista Ligada', 10],
+    ['Lógica de Programação', 10],
     ['Design patterns', 10],
     ['Modelo OSI', 10],
   ];

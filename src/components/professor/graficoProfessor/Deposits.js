@@ -17,7 +17,7 @@ export default function Deposits() {
     >
       <Title>Média da última Prova</Title>
       <Typography component="p" variant="h4" sx={{ fontSize: '4rem', fontWeight: 'bold' }}>
-        6
+        8.5
       </Typography>
       <Typography color="text.secondary" sx={{ flex: 1, fontSize: '1.25rem', fontWeight: 'bold' }}>
         04 Junho, 2024

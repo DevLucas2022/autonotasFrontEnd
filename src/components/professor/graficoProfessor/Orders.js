@@ -12,8 +12,9 @@ function createData(id, date, name, category, amount) {
 }
 
 const rows = [
-  createData(0, '04 Jun, 2024', 'Estrutura de Dados', 'Prova 1', 6),
-  createData(1, '04 Jun, 2024', 'Aprendizagem de Máquina', 'Atividade', 7),
+  createData(0, '04 Jun, 2024', 'Algoritmo e Lógica de Programação', 'Prova 1', 9),
+  createData(1, '04 Jun, 2024', 'Experiência do Usuário', 'Prova 1', 8),
+  createData(1, '04 Jun, 2024', 'Segurança da Informação', 'Prova 1', 9),
 ];
 
 export default function Orders() {
