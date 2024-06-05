@@ -1,9 +1,10 @@
 import Grid from "@mui/material/Grid";
-import { Box, Card, Typography } from "@mui/material";
+import { Box, Card, Typography, Button } from "@mui/material";
 import { v4 as uuidv4 } from 'uuid';
 import { DataGrid } from '@mui/x-data-grid';
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import AppBarProfessor from "../../home/components/AppBarProfessor";
 
 
 
@@ -48,8 +49,14 @@ function ListaDisciplinas() {
                 backgroundImage: 'url(/images/Background.png)'
             }}>
             <Grid container spacing={3} direction="row" justifyContent="center" alignItems="stretch">
-                <Grid item xs={12} textAlign='center'>
+                <Grid item xs={12} sx={{ marginBottom: 10}}>
+                    <AppBarProfessor />
+                </Grid>
+                <Grid item xs={7} textAlign='right'>
                     <Typography variant="h4" color='black'>Disciplinas</Typography>
+                </Grid>
+                <Grid item xs={5} textAlign='center'>
+                    <Button variant="contained" onClick={() => navigate('/dashboard/professor/disciplina/criar')}>Criar Disciplina</Button>
                 </Grid>
                 <Grid item xs={12} md={6} lg={8}>
                     <Card>

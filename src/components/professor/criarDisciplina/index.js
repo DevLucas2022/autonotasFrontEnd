@@ -7,14 +7,15 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
+import AppBarProfessor from '../../home/components/AppBarProfessor';
 
 const defaultTheme = createTheme();
 
 export default function CriarDisciplina() {
     //   const {userId, setUserId} = useContext(UserContext)
-    //   const idProfessor = userId
+    const idProfessor = 1
     const [disciplina, setDisciplina] = useState({});
-    const navigate = useNavigate
+    const navigate = useNavigate()
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -24,10 +25,13 @@ export default function CriarDisciplina() {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(disciplina)
+                body: JSON.stringify({
+                    idProfessor,
+                    nomeDisciplina: disciplina.nomeDisciplina
+                })
             });
 
-            navigate("/dashboard")
+            navigate("/dashboard/professor/disciplinas")
             return resposta;
         } catch (error) {
             console.log(error);
@@ -55,7 +59,8 @@ export default function CriarDisciplina() {
                 }}
                 component="form" noValidate onSubmit={handleSubmit}
             >
-                <Paper sx={{padding: 5, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 15, border: 0.1}}>
+                <AppBarProfessor />
+                <Paper sx={{padding: 5, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 15}}>
                     <Grid container spacing={2} sx={{textAlign: 'center'}}>
                         <Grid item xs={12}>
                             <Typography component="h6" variant="h5">
@@ -75,7 +80,6 @@ export default function CriarDisciplina() {
                         </Grid>
                         <Grid item xs={6} sx={{ textAlign: 'right' }}>
                             <Button
-                                onClick={() => navigate('/dashboard')}
                                 variant="contained"
                                 sx={{ mt: 3, mb: 2 }}
                             >
