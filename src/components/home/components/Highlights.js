@@ -85,7 +85,7 @@ export default function Highlights() {
           }}
         >
           <Typography component="h2" variant="h4">
-            Sessões
+            Recursos
           </Typography>
           <Typography variant="body1" sx={{ color: 'grey.400' }}>
           Explore todas as funcionalidades da nossa plataforma, com tudo que você precisa integrado em um só lugar.
