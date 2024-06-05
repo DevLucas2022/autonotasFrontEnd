@@ -53,7 +53,6 @@ export default function SignInSideProfessor() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    alert(JSON.stringify(login));
     try {
       const resposta = await fetch("http://localhost:8080/professores/login", {
         method: "POST",
