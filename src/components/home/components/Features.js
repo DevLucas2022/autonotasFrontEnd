@@ -43,7 +43,7 @@ export default function Features() {
               sx={{ mb: { xs: 2, sm: 4 } }}
             >
             O Auto Notas é uma ferramenta inovadora que facilita a atribuição de notas e feedbacks, melhorando a comunicação entre professores e alunos. Com salas personalizadas, o software organiza eficientemente as avaliações, permitindo que os alunos acessem suas notas e feedbacks instantaneamente. A personalização do feedback atende às necessidades individuais dos alunos, fortalecendo a relação educacional e aprimorando a experiência de aprendizado. A ferramenta inclui uma dashboard interativa onde os alunos podem acompanhar seu desempenho ao longo do período letivo, visualizando suas conquistas e áreas a melhorar. O Auto Notas é um poderoso aliado na organização e personalização do ensino, tornando o processo educacional mais eficiente, transparente e motivador.
-                        </Typography>
+            </Typography>
           </div>
           <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>
             {items.map(({ title }, index) => (
@@ -78,6 +78,7 @@ export default function Features() {
             sx={{
               display: { xs: 'auto', sm: 'none' },
               mt: 4,
+              backgroundRepeat: 'no-repeat', // Evita a repetição da imagem
             }}
           >
             <Box
@@ -132,21 +133,15 @@ export default function Features() {
               width: '100%',
               display: { xs: 'none', sm: 'flex' },
               pointerEvents: 'none',
+              backgroundImage: (theme) =>
+                theme.palette.mode === 'light'
+                  ? items[selectedItemIndex].imageLight
+                  : items[selectedItemIndex].imageDark,
+              backgroundRepeat: 'no-repeat', // Corrigido para 'no-repeat'
+              backgroundSize: 'contain',
+              backgroundPosition: 'center',
             }}
-          >
-            <Box
-              sx={{
-                m: 'auto',
-                width: 420,
-                height: 500,
-                backgroundSize: 'contain',
-                backgroundImage: (theme) =>
-                  theme.palette.mode === 'light'
-                    ? items[selectedItemIndex].imageLight
-                    : items[selectedItemIndex].imageDark,
-              }}
-            />
-          </Card>
+          />
         </Grid>
       </Grid>
     </Container>
