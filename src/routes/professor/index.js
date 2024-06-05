@@ -7,6 +7,7 @@ import ListaDisciplinaAlunos from '../../components/professor/listaDisciplinaAlu
 import AdicionarDisciplinaAluno from '../../components/professor/adicionarAlunoDisciplina';
 import AtualizaNotasAluno from '../../components/professor/atualizarNotasAluno';
 import ListaDisciplinas from '../../components/professor/listaDisciplinas';
+import Dashboard from '../../components/professor/graficoProfessor/Dashboard';
 
 const professorRoutes = [{
     path: 'professor',
@@ -39,6 +40,10 @@ const professorRoutes = [{
       {
         path: 'disciplina/aluno/atualiza/:idAlunoDisciplina/:idDisciplina',
         element: <AtualizaNotasAluno />
+      },
+      {
+        path: 'graficos',
+        element: <Dashboard />
       }
     ],
   }];
