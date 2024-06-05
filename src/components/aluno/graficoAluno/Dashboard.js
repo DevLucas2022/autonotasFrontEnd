@@ -1,3 +1,4 @@
+// src/components/aluno/graficoAluno/Dashboard.js
 import * as React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -7,11 +8,12 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link'; // Adicionado
-import Box from '@mui/material/Box'; // Adicionado
+import Link from '@mui/material/Link';
+import Box from '@mui/material/Box';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
+import PieChart3D from './PieChart3D'; // Correct import path
 
 function Copyright(props) {
   return (
@@ -29,12 +31,11 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
-
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <MuiAppBar position="absolute"> {/* Alterado de 'AppBar' para 'MuiAppBar' */}
+        <MuiAppBar position="absolute">
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
@@ -50,7 +51,7 @@ export default function Dashboard() {
               Gráficos
             </Typography>
           </Toolbar>
-        </MuiAppBar> {/* Alterado de 'AppBar' para 'MuiAppBar' */}
+        </MuiAppBar>
         <Box
           component="main"
           sx={{
@@ -61,16 +62,16 @@ export default function Dashboard() {
             flexGrow: 1,
             height: '100vh',
             overflow: 'auto',
-            backgroundImage: 'url(/images/Background.png)', // Caminho da imagem no diretório public
-            backgroundSize: 'cover', // Ajusta a imagem para cobrir todo o fundo
-            backgroundPosition: 'center', // Centraliza a imagem
-            backgroundRepeat: 'no-repeat', // Evita a repetição da imagem
+            backgroundImage: 'url(/images/Background.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
           }}
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {/* Chart */}
+              {/* Line Chart */}
               <Grid item xs={12}>
                 <Paper
                   sx={{
@@ -83,8 +84,20 @@ export default function Dashboard() {
                   <Chart />
                 </Paper>
               </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
+              {/* Pie Chart 3D and Recent Deposits in the same row */}
+              <Grid item xs={12} md={8}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 240,
+                  }}
+                >
+                  <PieChart3D />
+                </Paper>
+              </Grid>
+              <Grid item xs={12} md={4}>
                 <Paper
                   sx={{
                     p: 2,
