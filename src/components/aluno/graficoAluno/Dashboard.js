@@ -14,6 +14,7 @@ import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
 import PieChart3D from './PieChart3D'; // Correct import path
+import AppBarInterno from '../../home/components/AppBarInterno';
 
 function Copyright(props) {
   return (
@@ -35,23 +36,7 @@ export default function Dashboard() {
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <MuiAppBar position="absolute">
-          <Toolbar
-            sx={{
-              pr: '24px', // keep right padding when drawer closed
-            }}
-          >
-            <Typography
-              component="h1"
-              variant="h6"
-              color="inherit"
-              noWrap
-              sx={{ flexGrow: 1 }}
-            >
-              Gráficos
-            </Typography>
-          </Toolbar>
-        </MuiAppBar>
+        <Box marginBottom={5}><AppBarInterno /></Box>
         <Box
           component="main"
           sx={{
